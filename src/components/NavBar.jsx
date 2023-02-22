@@ -27,9 +27,7 @@ const NavBar = () => {
                         <Avatar name='siete' size="lg" src= "https://imgs.search.brave.com/hyGTN0IQ0EJlmXt527cqgZxRdtooj9tkC1CdtXlLzDI/rs:fit:512:512:1/g:ce/aHR0cHM6Ly9pbWFn/ZXMudmV4ZWxzLmNv/bS9tZWRpYS91c2Vy/cy8zLzE0NjMzMS9p/c29sYXRlZC9wcmV2/aWV3LzM0Yzc3NjNi/N2E5Zjc3ZTIyMTM1/M2Q3MTIyZmE3OWVj/LWJhcnJhLWRlLW9y/by1maWd1cmEtc2ll/dGUtcy0tbWJvbG8t/YnktdmV4ZWxzLnBu/Zw" />
                 </Box>
                 <Box p="1" w="300" h="30">
-                    <Link to={"/"}>
-                        <Brand size="lg" color={"#CDC2A6"}> Siete Muebles </Brand>
-                    </Link>
+                    <Heading size="lg" color={"#CDC2A6"}> Siete Muebles </Heading>
                 </Box>
                 <Spacer />
                 <Box p="1" w="300" h="30">
