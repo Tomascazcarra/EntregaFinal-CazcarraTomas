@@ -1,0 +1,6 @@
+[
+    { "id": "1", "name": "Producto 1", "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit tortor id, habitant inceptos facilisis cubilia massa arcu lacinia quisque lectus vel,", "stock": 5, "price": "$ 1500", "category": "silla"},
+    { "id": "2", "name": "Producto 2", "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit tortor id, habitant inceptos facilisis cubilia massa arcu lacinia quisque lectus vel,", "stock": 15, "price": "$ 2300", "category": "silla"},
+    { "id": "3", "name": "Producto 3", "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit tortor id, habitant inceptos facilisis cubilia massa arcu lacinia quisque lectus vel,", "stock": 1, "price": "$ 5800", "category": "mesa"},
+    { "id": "4", "name": "Producto 4", "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit tortor id, habitant inceptos facilisis cubilia massa arcu lacinia quisque lectus vel,", "stock": 6, "price": "$ 3000", "category": "mesa"}
+]
