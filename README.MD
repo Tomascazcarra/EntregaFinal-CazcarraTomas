@@ -3,10 +3,10 @@ En esta entrega se ha elaborado un E-commerce siguiendo la guia de las clases fi
 
 ## En el proyecto se han utilizado diversas tecnologias tales como:
 
-- [React.Js] como base del proyecto.
-- CSS, HTML y JavaScript como complemento.
-- [ChakraUI] como biblioteca principal para estilos.
-- [Firebase] como base de datos principal.
+- **React.Js** como base del proyecto.
+- **CSS**, **HTML** y **JavaScript** como complemento.
+- **ChakraUi** como biblioteca principal para estilos.
+- **Firebase** como base de datos principal.
 
 El objetivo del proyecto fue desarrollar una tienda virtual (aplicacion) para una muebleria, teniendo en cuenta no solamente lo estetico sino a su vez las funcionalidades de la misma.
 
