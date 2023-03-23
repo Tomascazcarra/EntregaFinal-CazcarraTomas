@@ -15,7 +15,7 @@ El objetivo del proyecto fue desarrollar una tienda virtual (aplicacion) para un
 Para poder correr la aplicacion se debe tener instalado [React.js]
 Una vez abierto el proyecto se debe introducir dentro de una nueva terminal el codigo:
 ```sh
-cd npm run dev
+npm run dev
 ```
 El cual otorgara acceso a la visualizacion del sitio web.
 
