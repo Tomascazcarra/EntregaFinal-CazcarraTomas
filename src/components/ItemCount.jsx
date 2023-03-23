@@ -1,39 +1,62 @@
 import React from 'react'
-import { useEffect, useState } from 'react';
-import { Center, Divider, Flex, Heading, Stack } from '@chakra-ui/react';
-import { Card, CardHeader, CardBody, CardFooter, SimpleGrid, Button, Text, Image, Box, ButtonGroup, Link } from '@chakra-ui/react';
+import { useState } from 'react';
+import { Center, Button } from '@chakra-ui/react';
+import { CartContext } from '../context/ShoppingCartContext';
+import { useContext } from 'react';
 
-const ItemCount = ({data}) => {
 
-    const [contador, setcontador] = useState(0);
-    useEffect(() => {
-    }, [contador]);
+const ItemCount = ({ data, id }) => {
+  const [cart, setCart] = useContext(CartContext);
+  const [count, setCount] = useState(1);
+
+  const addQty = () => {
+    setCount(count + 1);
+  };
+
+  const substractQty = () => {
+    setCount(count - 1);
+  };
+
+  const addToCart = () => {
+    setCart((currItems) => {
+      console.log(currItems)
+      console.log(data)
+      const isItemFound = currItems.find((item) => item.id === id);
+      if (isItemFound) {
+        return currItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity + count };
+          }
+          else {
+            return item;
+          }
+        });
+      }
+      else {
+        return [...currItems, { id: id, quantity: count, price: data.price, name: data.name, imagen: data.imagen }];
+      }
+    });
+  };
 
   return (
-<>                
-    <Center>
-        <p>{contador}</p>
-    </Center>
-    <Center color='black'>
-        <Button size="md" color="#111F5F" bgColor={"white"} onClick ={() => {
-            setcontador(contador + 1);
-            }}>
-            +
-        </Button> 
-        <Link to={"/cart"}>
-            <Button size="sm" color="#111F5F" bgColor={"#CDC2A6"} onClick ={() => {
-                }}>
-                Add to cart
-            </Button>
-        </Link>
-        <Button size="md" color="#111F5F" bgColor={"white"} onClick ={() => {
-            setcontador(contador - 1);
-            }}>
-            -
+    <>
+      <Center>
+        <p></p>
+      </Center>
+      <Center color='black'>
+        <Button size="md" color="#111F5F" bgColor={"white"} onClick={addQty}>
+          +
         </Button>
-    </Center>
-</>
-  )
-}
+        <Button size="sm" color="#111F5F" bgColor={"#CDC2A6"} onClick={() => addToCart()}>
+          Añadir al carrito: {count}
+        </Button>
+        <Button size="md" color="#111F5F" bgColor={"white"} onClick={substractQty}>
+          -
+        </Button>
+      </Center>
+    </>
+
+  );
+};
 
 export default ItemCount

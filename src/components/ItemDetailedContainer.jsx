@@ -1,34 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import Data from "../data.json";
 import ItemDetailed from './ItemDetailed';
 import { useParams } from 'react-router-dom';
-
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailedContainer = () => {
-    const {id} = useParams();
-    console.log(id);
-    const [datos, setDatos] = useState([]);
+  const { id } = useParams();
+  const [producto, setProducto] = useState([]);
+  useEffect(() => {
+    const db = getFirestore();
+    const muebleRef = doc(db, "muebles", `${id}`)
+    getDoc(muebleRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        setProducto(snapshot.data());
+      }
+      else {
+        console.log("asdasd")
+      };
+    });
+  }, []);
 
-    useEffect(() => {
-        async function fetchData(){
-            try {
-                const response = await fetch(Data);
-                const data = await response.json();
-                setDatos(data);
-            } catch(error){
-            }
-        }
-        fetchData ();
-    }, []);
+  console.log("asdasd");
+  console.log(producto)
 
-    const datosFilter = Data.filter((datos) => datos.id === id);
-    console.log(datosFilter)
   return (
-    
-    <ItemDetailed data={datosFilter[0]} /> 
-   
-    
-  )
-}
+    <ItemDetailed muebles={producto} id={id} />
+  );
+};
 
-export default ItemDetailedContainer
+export default ItemDetailedContainer;
